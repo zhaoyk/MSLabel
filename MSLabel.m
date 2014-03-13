@@ -184,13 +184,9 @@ static const int kAlignmentBuffer = 0;
     NSMutableArray *outputLines = [[NSMutableArray alloc] init];
     
     int lineNumber = 0;
+    [outputLines insertObject:@"" atIndex:lineNumber];
     
     for (id word in words) {
-        if ([outputLines count] == 0) {
-            [outputLines insertObject:word atIndex:lineNumber];
-            continue;
-            
-        }
         
         NSString *line = [outputLines objectAtIndex:lineNumber];
         NSString *newLine = [NSString stringWithFormat:@"%@%@", line, word];
